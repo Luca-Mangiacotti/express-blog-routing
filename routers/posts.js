@@ -1,13 +1,15 @@
 const express = require('express')
 const router = express.Router();
+const blogPosts = require('../data/post')
 
 // index
 router.get('/', function(req, res) {
-    res.send(`Lista dei post`)
+    res.json(blogPosts)
    })
 // show
 router.get('/:id', function(req, res) {
-    res.send(`dettagli post ${req.params.id}`)
+    const currentPost = blogPosts.find((elm) => elm.id == req.params.id )
+    res.json(currentPost)
    })
 // store
 router.post('/', function(req, res) {
