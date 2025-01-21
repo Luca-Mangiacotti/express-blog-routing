@@ -3,11 +3,11 @@ const router = express.Router();
 
 // index
 router.get('/', function(req, res) {
-    res.send('Lista dei post')
+    res.send(`Lista dei post`)
    })
 // show
 router.get('/:id', function(req, res) {
-    res.send(`dettagli post`)
+    res.send(`dettagli post${req.params.id}`)
    })
 // store
 router.post('/', function(req, res) {
@@ -15,15 +15,15 @@ router.post('/', function(req, res) {
    })
 // update
 router.put('/:id', function (req, res) {
-    res.send('Modifica integrale del post ');
+    res.send(`modifica integrale del post${req.params.id}`);
    });
 // modify
 router.patch('/:id', function (req, res) {
-    res.send('Modifica parziale del post ');
+    res.send(`modifica parziale del post${req.params.id}`);
    });
 // destroy
 router.delete('/:id', function (req, res) {
-    res.send('Eliminazione del post');
+    res.send(`Eliminazione post${req.params.id}`);
    });
   
 module.exports = router
