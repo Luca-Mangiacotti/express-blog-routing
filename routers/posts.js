@@ -7,7 +7,7 @@ router.get('/', function(req, res) {
    })
 // show
 router.get('/:id', function(req, res) {
-    res.send(`dettagli post${req.params.id}`)
+    res.send(`dettagli post ${req.params.id}`)
    })
 // store
 router.post('/', function(req, res) {
@@ -15,15 +15,15 @@ router.post('/', function(req, res) {
    })
 // update
 router.put('/:id', function (req, res) {
-    res.send(`modifica integrale del post${req.params.id}`);
+    res.send(`modifica integrale del post ${req.params.id}`);
    });
 // modify
 router.patch('/:id', function (req, res) {
-    res.send(`modifica parziale del post${req.params.id}`);
+    res.send(`modifica parziale del post ${req.params.id}`);
    });
 // destroy
 router.delete('/:id', function (req, res) {
-    res.send(`Eliminazione post${req.params.id}`);
+    res.send(`Eliminazione post ${req.params.id}`);
    });
   
 module.exports = router
