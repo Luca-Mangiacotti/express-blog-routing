@@ -6,11 +6,17 @@ const blogPosts = require('../data/post')
 router.get('/', function(req, res) {
     res.json(blogPosts)
    })
+
 // show
 router.get('/:id', function(req, res) {
     const currentPost = blogPosts.find((elm) => elm.id == req.params.id )
-    res.json(currentPost)
+    if(currentPost){
+        res.json(currentPost)
+    } else {
+        res.sendStatus(404)
+    }
    })
+   
 // store
 router.post('/', function(req, res) {
     res.send('Creazione nuovo post')
